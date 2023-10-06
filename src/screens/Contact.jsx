@@ -1,76 +1,101 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/mainLogo.svg";
-import { AiOutlineLinkedin, AiOutlineInstagram } from "react-icons/ai";
-import x_twitter from "../assets/twitter_x.svg";
-import { FiPhone } from "react-icons/fi";
-import { CiLocationOn } from "react-icons/ci";
-import { HiOutlineMail } from "react-icons/hi";
+import logo from "../assets/main_logo.png";
+import { BiLogoLinkedin, BiLogoInstagramAlt } from "react-icons/bi";
+import { RiTwitterXFill } from "react-icons/ri";
+import { darkModeColors, lightModeColors } from "../styles/colors";
+import { useStateProvider } from "../context/StateProvider";
 
 const Contact = () => {
+  const [{ dark_mode }] = useStateProvider();
+
   return (
-    <ContactContainer id="contact">
-      <div className="ellipse"></div>
-      <div className="container">
-        <div className="header-part">
-          <header>Contact Us</header>
-          {/* <p>
-            Get in touch with us today. Whether you have questions, ideas, or
-            simply want to say hello, we're here to listen. Your feedback and
-            inquiries matter to us, and we're committed to providing you with
-            the support and information you need. Reach out via the contact form
-            below, or connect with us through our social media channels. We look
-            forward to hearing from you
-          </p> */}
+    <ContactContainer mode={dark_mode} id="contact">
+      <div className="contact-container">
+        <div className="left">
+          <div className="context">
+            <header>Let's start a conversation</header>
+            <p>
+              We’re are happy to answer any questions or provide with an
+              estimate. Just send a message in the form below with any questions
+              you may have.
+            </p>
+          </div>
         </div>
-        <div className="bottom">
-          <div className="left">
-            <div className="social">
+        <div className="right">
+          <form
+            action="https://formsubmit.co/info@tekorse.com"
+            method="POST"
+            className="form"
+          >
+            <input type="hidden" name="_template" value="table" />
+            <div className="name">
+              <input type="text" name="First Name" placeholder="First Name" />
+              <input type="text" name="Last Name" placeholder="Last Name" />
+            </div>
+            <input type="email" name="Email" placeholder="Email" />
+            <input
+              type="number"
+              name="Phone Number"
+              placeholder="+91 Phone Number"
+            />
+            <textarea
+              name="Message"
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Message"
+            />
+            <button type="submit" className="submit-btn">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+      <div className="contact-footer">
+        <div className="logo">
+          <img src={logo} alt="Tekorse" />
+        </div>
+        <div className="contact-info">
+          <div className="social">
+            <p>Follow us on </p>
+            <div className="social_icons">
               <a
                 href="https://twitter.com/tekorse"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img className="twitter" src={x_twitter} alt="twitter" />
-                {/* <AiFillTwitterSquare className="icon" /> */}
+                <RiTwitterXFill size={17} className="icon" />
               </a>
               <a
                 href="https://www.instagram.com/tekorsetechnologies/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <AiOutlineInstagram className="icon" />
+                <BiLogoInstagramAlt size={20} className="icon" />
               </a>
               <a
                 href="https://www.linkedin.com/company/tekorse-technologies/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <AiOutlineLinkedin className="icon" />
+                <BiLogoLinkedin size={20} className="icon" />
               </a>
             </div>
-            <p className="email">
-              <a href="mailto:info@tekorse.com">
-                <HiOutlineMail /> info@tekorse.com
-              </a>
-            </p>
-            <p className="phone">
-              <a href="#phone">
-                <FiPhone />
-                <span>
-                  +91 9032201605 <br /> +91 9848811239
-                </span>
-              </a>
-            </p>
           </div>
           <div className="address">
-            {/* <header>Address</header> */}
-            <header>
-              <img src={logo} alt="Tekorse" />
-            </header>
-            <p>
-              <CiLocationOn size={20} /> Hyderabad, India
-            </p>
+            <span>Address</span>
+            <p>Hyderabad, India</p>
+          </div>
+          <div className="email">
+            <a href="mailto:info@tekorse.com">
+              <span>Mail us</span>
+              <p>info@tekorse.com</p>
+            </a>
+          </div>
+          <div className="phone">
+            <span>Phone </span>
+            <p>+91 7569959211</p>
           </div>
         </div>
       </div>
@@ -82,183 +107,256 @@ export default Contact;
 
 const ContactContainer = styled.div`
   width: 100vw;
-  height: 100vh;
-  background-color: #010100;
-  color: #fff;
-  position: relative;
-  overflow-x: hidden;
+  background: ${(props) =>
+    props.mode === "dark"
+      ? darkModeColors.background
+      : lightModeColors.background};
   display: flex;
-  justify-content: center;
-  align-items: center;
-  .ellipse {
-    z-index: 5;
-    position: absolute;
-    width: 902.767px;
-    height: 462.979px;
-    transform: rotate(-10.229deg);
-    border-radius: 902.767px;
-    background: linear-gradient(
-      268deg,
-      #3d95e7 0%,
-      rgba(179, 89, 249, 0.55) 44.72%,
-      rgba(127, 55, 245, 0) 100%
-    );
-    filter: blur(130.5px);
-  }
-  .container {
-    height: 90%;
-    width: 90%;
+  flex-direction: column;
+  .contact-container {
+    width: 100%;
+    height: 65%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    .header-part {
-      width: 80%;
+    .left {
+      width: 50%;
+      height: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      header {
-        font-size: 65px;
-        font-weight: 700;
-        width: 50%;
-      }
-      p {
-        width: 40%;
-        font-size: 14px;
-        font-weight: 300;
-        text-align: end;
-      }
-    }
-    .bottom {
-      display: flex;
-      width: 80%;
-      justify-content: space-between;
-      .left {
+      .context {
         display: flex;
         flex-direction: column;
-        row-gap: 1.2rem;
-        color: #bfbfbf;
+        gap: 1rem;
+        width: 80%;
         header {
-          /* font-size: 50px;
-          font-weight: 500; */
+          font-size: 60px;
+          font-weight: 700;
+          color: ${(props) =>
+            props.mode === "dark"
+              ? darkModeColors.text
+              : lightModeColors.text} !important;
         }
-        .social {
+        p {
+          width: 80%;
+          color: ${(props) =>
+            props.mode === "dark"
+              ? darkModeColors.text
+              : lightModeColors.text} !important;
+        }
+      }
+    }
+    .right {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .name {
           display: flex;
-          align-items: center;
           justify-content: space-between;
-          width: 50%;
-          a {
-            .twitter {
-              width: 22px;
-              height: 22px;
-              color: #bfbfbf;
-            }
-          }
-          .icon {
-            font-size: 30px;
+          input {
+            width: 48%;
           }
         }
-        .email,
-        .phone {
+        input,
+        textarea {
+          color: ${(props) =>
+            props.mode === "dark" ? darkModeColors.text : lightModeColors.text};
+          padding: 1rem 1rem;
+          border-radius: 5px;
+          background-color: ${(props) =>
+            props.mode === "dark"
+              ? darkModeColors.background
+              : lightModeColors.background};
+          border: 1px solid
+            ${(props) =>
+              props.mode === "dark"
+                ? darkModeColors.accent
+                : lightModeColors.secondary};
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .submit-btn {
+        margin-block: 0.8rem;
+        border: none;
+        background-color: ${(props) =>
+          props.mode === "dark" ? darkModeColors.text : lightModeColors.text};
+        color: ${(props) =>
+          props.mode === "dark"
+            ? darkModeColors.background
+            : lightModeColors.background};
+        padding: 0.8rem 1.7rem;
+        border-radius: 7px;
+      }
+    }
+  }
+  .contact-footer {
+    height: 35vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: ${(props) =>
+      props.mode === "dark" ? darkModeColors.text : lightModeColors.text};
+
+    width: 100%;
+    .logo {
+      img {
+        width: 170px;
+      }
+
+      font-weight: 700;
+    }
+    .contact-info {
+      display: flex;
+      gap: 3rem;
+      .social {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        p {
+          font-weight: 500;
+          font-size: larger;
+          color: ${(props) =>
+            props.mode === "dark"
+              ? darkModeColors.background
+              : lightModeColors.background} !important;
+        }
+        .social_icons {
           display: flex;
-          align-items: center;
           gap: 0.5rem;
+          /* align-items: center; */
           a {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
-          }
-        }
-        .phone {
-          a {
-            span {
-              font-size: 12px;
+            justify-content: center;
+            background-color: ${(props) =>
+              props.mode === "dark"
+                ? darkModeColors.secondary
+                : lightModeColors.secondary};
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            .icon {
+              color: ${(props) =>
+                props.mode === "dark"
+                  ? darkModeColors.text
+                  : lightModeColors.text};
             }
           }
         }
       }
-      .address {
+      .address,
+      .phone {
         display: flex;
         flex-direction: column;
-        row-gap: 2rem;
-        header {
-          font-size: 50px;
-          font-weight: 500;
-        }
-        p {
-          font-size: 14px;
+        gap: 1rem;
+      }
+      .email {
+        a {
           display: flex;
-          align-items: center;
-          column-gap: 0.7rem;
+          flex-direction: column;
+          gap: 1rem;
         }
+      }
+      span {
+        font-size: larger;
+        font-weight: 500;
+        color: ${(props) =>
+          props.mode === "dark"
+            ? darkModeColors.background
+            : lightModeColors.background};
+      }
+      p {
+        font-size: smaller;
+        color: ${(props) =>
+          props.mode === "dark"
+            ? darkModeColors.secondary
+            : lightModeColors.secondary};
       }
     }
   }
   @media screen and (max-width: 1024px) {
-    .container {
-      .header-part {
-        header {
-          font-size: 50px;
-        }
-        p {
-          width: 50%;
-          font-size: 12px;
-        }
-      }
-      .bottom {
-        .left {
-          header {
-            font-size: 40px;
-          }
-        }
-        .address {
-          header {
-            font-size: 40px;
-          }
-          p {
-            font-size: 12px;
-          }
-        }
-      }
+    .contact-footer {
+      flex-direction: column;
+      row-gap: 2rem;
     }
   }
+
   @media screen and (max-width: 768px) {
-    .container {
-      .header-part {
-        flex-direction: column;
-        row-gap: 2rem;
-        header {
-          font-size: 35px;
-          text-align: center;
+    .contact-container {
+      flex-direction: column;
+      row-gap: 2rem;
+      .left {
+        width: 100%;
+        .context {
+          flex-direction: column;
+          align-items: center;
+          header {
+            font-size: 40px;
+          }
+          p {
+            display: none;
+          }
         }
-        p {
-          width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+    .contact-footer {
+      padding-block: 2rem;
+      height: max-content;
+      .contact-info {
+        flex-direction: column;
+        .social {
+          .social_icons {
+            justify-content: center;
+          }
+        }
+        .address,
+        .email,
+        .phone {
           text-align: center;
         }
       }
     }
   }
-  @media screen and (max-width: 550px) {
-    .container {
-      .header-part {
-        header {
-          font-size: 27px;
-        }
-        p {
-          font-size: 10px;
+  @media screen and (max-width: 500px) {
+    .contact-container {
+      .left {
+        .context {
+          header {
+            font-size: 30px;
+            text-align: center;
+          }
+          p {
+            display: none;
+          }
         }
       }
-      .bottom {
-        flex-direction: column;
-        row-gap: 2rem;
-        align-items: center;
-        .left {
-          align-items: center;
+      .right {
+        .form {
+          .name {
+            flex-direction: column;
+            gap: 1rem;
+            input {
+              width: 100%;
+            }
+          }
         }
-        .address {
-          align-items: center;
-          p {
-            text-align: center;
+      }
+      .contact-footer {
+        .logo {
+          img {
+            width: 150px;
           }
         }
       }

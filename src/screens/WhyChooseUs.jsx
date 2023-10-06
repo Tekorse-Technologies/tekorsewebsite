@@ -1,19 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import StatsCard from "../components/StatsCard";
-import { statsData } from "../utils/StatsCardData";
+import { darkmodeDonuts, lightmodeDonuts } from "../utils/StatsCardData";
+import { darkModeColors, lightModeColors } from "../styles/colors";
+import { useStateProvider } from "../context/StateProvider";
 
 const WhyChooseUs = () => {
+  const [{ dark_mode, darkMode }] = useStateProvider();
   return (
-    <WhyChooseUsContainer>
+    <WhyChooseUsContainer mode={dark_mode}>
       <div className="container">
         <div className="header">
           <header>Why Choose Us</header>
         </div>
         <div className="content">
-          {statsData.map(({ title, imgSrc }, id) => (
-            <StatsCard key={id} title={title} imgSrc={imgSrc} />
-          ))}
+          {darkMode
+            ? darkmodeDonuts.map(({ imgSrc, title }, id) => (
+                <StatsCard key={id} title={title} imgSrc={imgSrc} />
+              ))
+            : lightmodeDonuts.map(({ imgSrc, title }, id) => (
+                <StatsCard key={id} title={title} imgSrc={imgSrc} />
+              ))}
         </div>
       </div>
     </WhyChooseUsContainer>
@@ -23,13 +30,15 @@ const WhyChooseUs = () => {
 export default WhyChooseUs;
 
 const WhyChooseUsContainer = styled.div`
-  padding-top: 5rem;
   width: 100vw;
-  background: #010100;
-  color: #e5e1e1;
+  background-color: ${(props) =>
+    props.mode === "dark"
+      ? darkModeColors.background
+      : lightModeColors.background};
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 5rem;
   .container {
     height: 90%;
     width: 90%;
@@ -37,6 +46,11 @@ const WhyChooseUsContainer = styled.div`
     flex-direction: column;
     .header {
       header {
+        color: ${(props) =>
+          props.mode === "dark"
+            ? darkModeColors.accent
+            : lightModeColors.accent} !important;
+
         font-size: 60px;
         font-weight: 600;
       }

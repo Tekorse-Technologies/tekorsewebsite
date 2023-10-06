@@ -1,20 +1,39 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import logo from "../assets/mainLogo.svg";
+import logo from "../assets/main_logo.png";
+import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import "../styles/btnStyles.css";
+import { darkModeColors, lightModeColors } from "../styles/colors";
 import { CgMenu, CgClose } from "react-icons/cg";
+import { reducerCases } from "../context/Constants";
+import { useStateProvider } from "../context/StateProvider";
 
 const NavBar = () => {
   const [hamBurger, setHamBurger] = useState(false);
 
+  const [{ darkMode, dark_mode }, dispatch] = useStateProvider();
+
+  const toggleDarkMode = () => {
+    dispatch({
+      type: reducerCases.SET_DARK_MODE,
+      darkMode: !darkMode,
+    });
+    dispatch({
+      type: reducerCases.DARK_MODE,
+      dark_mode: dark_mode === "dark" ? "light" : "dark",
+    });
+  };
   return (
-    <NavContainer>
+    <NavContainer mode={dark_mode}>
       <div className="logo">
         <img src={logo} alt="Tekorse" />
       </div>
       <ul className="nav-items">
         <li>
           <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#blog">Blog</a>
         </li>
         <li>
           <a href="#services">Services</a>
@@ -26,9 +45,20 @@ const NavBar = () => {
           <a href="#contact">Contact</a>
         </li>
       </ul>
-      <button className="letsTalk">
-        <a href="#contact">Let's Talk</a>
-      </button>
+      <div className="btn-container">
+        <button className="letsTalk">
+          <a href="#contact">Let's Talk</a>
+        </button>
+        {darkMode ? (
+          <MdDarkMode className="theme hidden" onClick={toggleDarkMode} />
+        ) : (
+          <MdOutlineDarkMode
+            className="theme hidden"
+            onClick={toggleDarkMode}
+          />
+        )}
+      </div>
+
       {hamBurger ? (
         <CgClose
           className="ham-burger"
@@ -46,6 +76,9 @@ const NavBar = () => {
             <a href="#home">Home</a>
           </li>
           <li onClick={() => setHamBurger(!hamBurger)}>
+            <a href="#blog">Blog</a>
+          </li>
+          <li onClick={() => setHamBurger(!hamBurger)}>
             <a href="#services">Services</a>
           </li>
           <li onClick={() => setHamBurger(!hamBurger)}>
@@ -53,6 +86,25 @@ const NavBar = () => {
           </li>
           <li onClick={() => setHamBurger(!hamBurger)}>
             <a href="#contact">Contact</a>
+          </li>
+          <li
+            className="theme-container"
+            onClick={() => setHamBurger(!hamBurger)}
+          >
+            <button className="letstalk">
+              <a href="#contact">Let's Talk</a>
+            </button>
+            {/* <DarkModeToggle
+              className="theme"
+              onChange={toggleDarkMode}
+              checked={darkMode}
+              size={55}
+            /> */}
+            {darkMode ? (
+              <MdDarkMode className="theme" onClick={toggleDarkMode} />
+            ) : (
+              <MdOutlineDarkMode className="theme" onClick={toggleDarkMode} />
+            )}
           </li>
         </ul>
       )}
@@ -63,19 +115,33 @@ const NavBar = () => {
 export default NavBar;
 
 const NavContainer = styled.nav`
+  border-bottom: ${(props) =>
+    props.mode === "dark"
+      ? darkModeColors.secondary
+      : lightModeColors.secondary};
+  color: ${lightModeColors.text} 1px solid;
   position: sticky;
   top: 0;
   height: 105px;
-  background-color: #010100;
-  color: #fff;
+  box-shadow: ${(props) =>
+    props.mode === "dark"
+      ? "0px 4px 10px 0px rgba(16, 95, 216, 0.20)"
+      : "0px 4px 10px 0px #dedcff"} !important;
+  /* box-shadow: 0px 4px 67px 0px #dedcff; */
+  background-color: ${(props) =>
+    props.mode === "dark"
+      ? darkModeColors.background
+      : lightModeColors.background};
+  color: ${lightModeColors.text};
   display: flex;
   justify-content: space-around;
   align-items: center;
   z-index: 20;
   .logo {
-    font-size: 2.2rem;
+    img {
+      width: 170px;
+    }
     font-weight: 700;
-    color: #fff;
   }
   .nav-items {
     display: flex;
@@ -86,11 +152,36 @@ const NavContainer = styled.nav`
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+      a {
+        color: ${(props) =>
+          props.mode === "dark"
+            ? darkModeColors.text
+            : lightModeColors.text} !important;
+      }
     }
   }
-  button {
-    background-color: #4353ff;
-    color: #fff;
+  .btn-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .theme {
+      color: ${(props) =>
+        props.mode === "dark"
+          ? darkModeColors.text
+          : lightModeColors.text} !important;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+  .letsTalk {
+    background-color: ${(props) =>
+      props.mode === "dark"
+        ? darkModeColors.primary
+        : lightModeColors.primary} !important;
+    color: ${(props) =>
+      props.mode === "dark"
+        ? darkModeColors.text
+        : lightModeColors.background} !important;
     width: 126px;
     height: 50px;
     flex-shrink: 0;
@@ -105,13 +196,16 @@ const NavContainer = styled.nav`
     transition: all 0.3s ease-in-out;
     a {
       text-decoration: none;
-      color: #fff;
+      color: ${(props) =>
+        props.mode === "dark"
+          ? darkModeColors.text
+          : lightModeColors.background} !important;
     }
 
     cursor: pointer;
     &:hover {
       background-color: rgba(67, 83, 255, 0.9);
-      color: #fff;
+      color: ${lightModeColors.text};
       transition: all 0.3s ease-in-out;
       box-shadow: 0px 0px 20px rgba(67, 83, 255, 0.5);
       z-index: 1;
@@ -119,10 +213,14 @@ const NavContainer = styled.nav`
   }
   .ham-burger {
     display: none;
+    color: ${lightModeColors.primary};
   }
   .mobile-nav {
     position: absolute;
-    background-color: #010100;
+    background-color: ${(props) =>
+      props.mode === "dark"
+        ? darkModeColors.background
+        : lightModeColors.background};
     top: 105px;
     left: 0;
     width: 100%;
@@ -135,18 +233,51 @@ const NavContainer = styled.nav`
     li {
       list-style: none;
       font-size: 20px;
-      border-bottom: 1px solid #fff;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
-      color: #fff;
+      color: ${(props) =>
+        props.mode === "dark"
+          ? darkModeColors.text
+          : lightModeColors.text} !important;
+    }
+    .theme-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .letstalk {
+        border: none;
+        outline: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        background-color: ${(props) =>
+          props.mode === "dark"
+            ? darkModeColors.primary
+            : lightModeColors.primary} !important;
+        a {
+          font-family: "Plus Jakarta Sans", sans-serif;
+          color: ${(props) =>
+            props.mode === "dark"
+              ? darkModeColors.text
+              : lightModeColors.background} !important;
+        }
+      }
+      .theme {
+        cursor: pointer;
+      }
     }
   }
   @media screen and (max-width: 1024px) {
+    .hidden {
+      display: none;
+    }
     .logo {
       font-size: 2rem;
     }
     .nav-items {
+      display: none;
+    }
+    .letsTalk {
       display: none;
     }
     .ham-burger {
