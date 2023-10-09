@@ -17,10 +17,10 @@ function App() {
       <SubNavbar />
       <NavBar />
       <HeroSection />
-      <Blog />
       <AboutUs />
       <Services />
       <WhyChooseUs />
+      <Blog />
       <Contact />
     </ParallaxProvider>
   );

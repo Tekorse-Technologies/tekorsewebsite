@@ -15,7 +15,7 @@ const WhatsappLogo = () => {
         className="whatsapp-logo"
         rel="noreferrer"
       >
-        <BsWhatsapp size={22} />
+        <BsWhatsapp size={28} />
       </a>
       <p></p>
     </WhatsappLogoContainer>
