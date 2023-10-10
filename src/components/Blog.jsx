@@ -27,18 +27,16 @@ const Blog = () => {
         <div className="blog_content">
           <header>About Tekorse Technology</header>
           <p>
-            <span className="heading">Tekorse Technology :</span>where
-            innovation is not a destination but a way of life.It's the bridge
-            between imagination and implementation, where creativity meets code,
-            and visions turn into digital reality.
-            <br />
-            <br />
-            Tekorse Technology is a leading-edge tech company dedicated to
-            transforming innovative ideas into powerful digital solutions.It's
-            the alchemist of innovation, turning ideas into digital gold.
-            Picture a dynamic blend of tech wizards, creative minds, and data
-            virtuosos, all under one roof, crafting extraordinary digital
-            experiences...
+            In the ever-changing digital landscape, Tekorse Technologies stands
+            as a beacon of transformation and growth. We excel in custom
+            software solutions, from tailored apps to AI innovation, while also
+            fortifying your digital fortress with state-of-the-art
+            cybersecurity. But we don't stop there; our corporate training
+            empowers your team to harness the full potential of technology. We
+            envision a world where knowledge and tech unite for unparalleled
+            success. Join us on this journey, and let Tekorse Technologies be
+            your trusted partner for software and training, ensuring your
+            business is ready for a thriving future...
             <Link className="read-more" to="/blog">
               Read more <BsArrowUpRightSquare />
             </Link>

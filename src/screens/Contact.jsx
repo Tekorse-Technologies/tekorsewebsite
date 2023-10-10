@@ -156,7 +156,7 @@ const ContactContainer = styled.div`
         gap: 1rem;
         width: 60%;
         header {
-          font-size: 60px;
+          font-size: 55px;
           font-weight: 700;
           color: ${(props) =>
             props.mode === "dark"
@@ -212,6 +212,7 @@ const ContactContainer = styled.div`
         }
       }
       .submit-btn {
+        cursor: pointer;
         margin-block: 0.8rem;
         border: none;
         background-color: ${(props) =>
