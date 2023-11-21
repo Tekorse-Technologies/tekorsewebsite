@@ -24,24 +24,48 @@ const Contact = () => {
         </div>
         <div className="right">
           <form
-            action="https://formsubmit.co/info@tekorse.com"
+            id="contactform"
+            action="https://formsubmit.io/send/tekorse2023@outlook.com"
+            // action="https://formsubmit.co/info@tekorse.com"
             method="POST"
             className="form"
           >
-            <input type="hidden" name="_template" value="table" />
-            <div className="name">
-              <input type="text" name="First Name" placeholder="First Name" />
-              <input type="text" name="Last Name" placeholder="Last Name" />
-            </div>
-            <input type="email" name="Email" placeholder="Email" />
             <input
+              name="_formsubmit_id"
+              type="text"
+              style={{ display: "none" }}
+            ></input>
+            {/* <input type="hidden" name="_template" value="table" /> */}
+            {/* <input
+              type="hidden"
+              name="_url"
+              value="https://www.tekorse.com/#contact"
+            /> */}
+
+            <div className="name">
+              <input
+                type="text"
+                id="firstName"
+                name="First Name"
+                placeholder="First Name"
+              />
+              <input
+                type="text"
+                id="lastName"
+                name="Last Name"
+                placeholder="Last Name"
+              />
+            </div>
+            <input type="email" id="email" name="Email" placeholder="Email" />
+            <input
+              id="number"
               type="number"
               name="Phone Number"
               placeholder="+91 Phone Number"
             />
             <textarea
-              name="Message"
-              id=""
+              name="comment"
+              id="comment"
               cols="30"
               rows="10"
               placeholder="Message"
@@ -113,10 +137,13 @@ const ContactContainer = styled.div`
       : lightModeColors.background};
   display: flex;
   flex-direction: column;
+  padding-top: 5rem;
   .contact-container {
     width: 100%;
     height: 65%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     .left {
       width: 50%;
       height: 100%;
@@ -127,9 +154,9 @@ const ContactContainer = styled.div`
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        width: 80%;
+        width: 60%;
         header {
-          font-size: 60px;
+          font-size: 55px;
           font-weight: 700;
           color: ${(props) =>
             props.mode === "dark"
@@ -185,6 +212,7 @@ const ContactContainer = styled.div`
         }
       }
       .submit-btn {
+        cursor: pointer;
         margin-block: 0.8rem;
         border: none;
         background-color: ${(props) =>

@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import AboutUs from "./screens/AboutUs";
@@ -11,16 +12,19 @@ import Blog from "./components/Blog";
 import WhatsappLogo from "./components/WhatsappLogo";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <ParallaxProvider>
       <WhatsappLogo />
       <SubNavbar />
       <NavBar />
       <HeroSection />
-      <Blog />
       <AboutUs />
       <Services />
       <WhyChooseUs />
+      <Blog />
       <Contact />
     </ParallaxProvider>
   );

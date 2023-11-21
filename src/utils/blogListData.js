@@ -1,6 +1,180 @@
 export const blogData = [
   {
     id: 1,
+    title: "Online learning Platforms",
+    description: `Online learning platforms have been a boon to the education industry. With the
+    advent of technology, traditional learning has been revolutionized, paving the way
+    for learners to obtain skills and knowledge at their convenience. These platforms
+    are changing the face of education as we know it, opening up new avenues for
+    learners from all walks of life. <br/><br/>
+    Whether you prefer visual aids or need more time to understand a concept, the
+    Tekorse Technologies learning platform allows for personalization and gives you
+    the power to create a study environment that works best for you. Moreover, online
+    learning provides a wealth of resources that can support your learning journey.
+    From interactive lessons to practice exercises, simulations, and multimedia content,
+    our online learning offers students access to a plethora of learning materials to
+    supplement their studies. <br/><br/> Tekorse Technologies provides online learning by transforming the way you learn
+    and providing more accessible, affordable, and quality education opportunities to
+    students worldwide. With our personalization, flexibility, and interactivity at their
+    core, we offer a more engaging, interactive, and enriching learning experience. As
+    the world continues to adapt to digital learning, Tekorse Technologies remains at
+    the forefront of shaping the future of education.
+    `,
+  },
+  {
+    id: 2,
+    title: "Corporate Training and E-Learning",
+    description: `As companies aim to keep up with the constantly changing business landscape, one
+    thing remains constant: the need to upskill employees. In order to remain
+    competitive and meet business goals, it's essential to provide your workforce with
+    the necessary training to build their knowledge, abilities, and overall job
+    performance. This is where corporate training and e-learning come in. <br/><br/>
+    Corporate training is a structured process of teaching employees job-specific skills
+    that help them excel in their current or future roles. Meanwhile, e-learning
+    leverages technology to deliver training programs through online courses,
+    webinars, and multimedia presentations. <br/><br/>
+    Tekorse Technologies e-learning enables employees to learn at their own pace and
+    allows employees to complete courses whenever and wherever they are, giving
+    them the flexibility they need to keep up with their workload while still gaining the
+    necessary knowledge to excel. <br/><br/>
+    Tekorse Technologies ensures successful skill development by blending both
+    corporate training and e-learning methodologies into your training program.
+    Corporate training programs from Tekorse Technologies can include classroom
+    instruction, while e-learning can provide ongoing support, refresher courses, and
+    additional information for continued learning.  <br/><br/>
+    The aim of Tekorse Technologies is to find the right balance between traditional
+    training methods and e-learning technologies, creating a powerful and engaging
+    training program that boosts employee performance, improves job satisfaction, and
+    helps businesses achieve their goals.
+    `,
+  },
+  {
+    id: 3,
+    title: "The Learning Management System (LMS)",
+    description: `LMS has revolutionized the way education is imparted. It has become the go-to
+    platform for educators and learners alike. The LMS has changed the traditional
+    classroom structure, where students have to attend classes in person. Instead, with
+    an LMS, learners can access course materials from anywhere in the world at any
+    time. <br/><br/>
+    The content provided by Tekorse Technologies is a vital aspect of our LMS, which
+    will be engaging, interactive, and also foster an environment of active learning.
+    Our LMS content is broken down into easily digestible sections, which include
+    visual aids, videos, and animations to enhance the learning experience. The use of
+    graphics and infographics makes it easier for learners to retain information. <br/><br/>
+    Tekorse Technologies provides Interactive quizzes, assignments, and discussions
+    are provided as part of LMS content. This fosters collaboration between learners,
+    which will enhance their learning experience. <br/><br/>
+    Our LMS helps learners customize their learning experience based on their
+    learning style and preferences. They can access the content they need at any time
+    and go back and revisit material whenever they need to.    
+    `,
+  },
+  {
+    id: 4,
+    title: "Virtual Classrooms",
+    description: `The world of virtual classrooms, where learning and education have no boundaries!
+    The advent of technology has brought about a revolutionary change in the way
+    education is delivered and accessed, making it more accessible, flexible, and
+    dynamic. With virtual classrooms, learning can take place anytime, anywhere, and
+    with anyone, opening up a whole new world of opportunities for learners and
+    educators alike. <br/><br/>
+    Tekorse Technologies uses multimedia tools such as videos, audio, graphics, and
+    simulations in virtual classrooms for a greater learning experience. Students can
+    learn at their own pace, access a variety of resources, and participate in
+    collaborative activities that enhance their understanding and skills. <br/><br/>
+    Our trainers, on the other hand, use innovative methods such as gamification,
+    flipped learning, and project-based learning to create a stimulating and inclusive
+    learning environment that caters to the needs and interests of each student. <br/><br/>
+    <span className="list-header" >Why Choose Tekorse Technologies Virtual Classrooms?</span> <br/><br/>
+
+    <span className="list-items" >1.Accessible and convenient:</span> Students can learn from anywhere without having to
+    travel or be physically present in a classroom. At Tekorse Technologies, they can
+    attend classes at their own pace and time, which makes it easier for working
+    professionals, international students, and people with disabilities to pursue their
+    education. <br/> <br/>
+
+    <span className="list-items" >2. Cost-effective:</span> Our virtual classrooms save time, money, and resources as they
+    eliminate the need for physical infrastructure, textbooks, and other resources.
+    Students can access our course materials online and communicate with our trainers
+    and peers through video conferencing and other digital tools, reducing the overall
+    cost of education. <br/> <br/>
+    
+    <span className="list-items">3. Flexible and personalized:</span>Tekorse Technologies virtual classrooms provide
+    learners with personalized learning experiences that cater to their individual needs
+    and learning styles. Our trainers will customize their teaching methods and
+    curriculum based on the strengths, weaknesses, and interests of their students. <br/> <br/>
+
+    <span className="list-items">4. Interactive and engaging:</span> We offer a more immersive and engaging learning
+    experience as we incorporate multimedia tools and interactive activities that
+    enhance students' understanding and retention of concepts.
+    `,
+  },
+  {
+    id: 5,
+    title: "Online assessment and testing",
+    description: `The world has rapidly transitioned to an online environment in the wake of the
+    COVID-19 pandemic. In the world of education, traditional forms of assessment
+    have had to be adapted to fit the online environment. Online assessment and testing
+    have become the norm, and students, educators, and institutions are having to learn
+    how to make it work. <br/><br/>
+    Tekorse Technologies Online assessment and testing are essentially the use of
+    technology to deliver exams and assignments remotely. At Tekorse Technologies,
+    we offer different types of online assessments, including formative assessments,
+    summative assessments, and diagnostic assessments. This helps educators
+    determine a student's strengths and weaknesses, track progress, and identify areas
+    of improvement. <br/><br/>
+    The online assessments at Tekorse Technologies provide flexibility and
+    convenience, which allows students to take the exams from anywhere at any time.
+    We also offer immediate feedback to students, allowing them to learn from their
+    mistakes. The use of technology makes our online assessments more efficient,
+    reliable, and cost-effective than traditional assessments.
+    `,
+  },
+  {
+    id: 6,
+    title: "Educational content creation",
+    description: `Educational content creation is a vital component of modern learning. As
+    traditional forms of education continue to evolve, it's essential to adapt to the
+    changing times and ensure that our students have access to the most comprehensive
+    and up-to-date information. The best way to do this is through educational content
+    creation with the help of Tekorse Technologies. <br/><br/>
+    With Tekorse Technologies, it's easier to reach students than ever before and to
+    create educational content that can be accessed anytime, anywhere. From video
+    tutorials to online courses, podcasts to social media content We create engaging
+    educational content, which requires a combination of expertise, creativity, and
+    careful planning. When creating content, we consider the audience and what they
+    want to learn. What problems are they facing, and how can we help to solve them? <br/><br/>
+    The benefits of educational content creation are immense for Tekorse
+    Technologies. We provide learners with easy-to-digest, visually appealing
+    information that can help enhance retention.
+    `,
+  },
+  {
+    id: 8,
+    title: "EdTech Consultation and Integration",
+    description: `Tekorse Technologies EdTech Consultation Services can help you integrate the
+    most appropriate tools and technologies into your teaching strategy. <br/><br/>
+    Our team of experts will assess your current curriculum and identify areas where
+    technology can be used to increase student engagement, promote collaboration, and
+    facilitate knowledge acquisition. We will provide you with personalized
+    recommendations on the best EdTech tools to meet your specific needs and help
+    you make the most of them. <br/><br/>
+    But our job does not end there! We understand that implementing a new EdTech
+    solution can be challenging and requires significant preparation and training. Our
+    team will assist you in creating a plan to introduce the technology to your students,
+    including teacher training and support, technical troubleshooting, and continuous
+    evaluation of the impact on student learning. <br/><br/>
+    With our EdTech consultation services, you can revolutionize the way you teach
+    and give your students an innovative and interactive learning experience that will
+    prepare them for the demands of the modern world.
+    `,
+  },
+  {},
+];
+
+export const oldBlogData = [
+  {
+    id: 1,
     subTitle: "Application Development",
     spanTitle: "Empowering Innovations",
     spanContent: "Unraveling the Marvels of App",

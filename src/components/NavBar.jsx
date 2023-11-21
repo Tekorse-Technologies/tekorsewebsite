@@ -33,13 +33,13 @@ const NavBar = () => {
           <a href="#home">Home</a>
         </li>
         <li>
-          <a href="#blog">Blog</a>
+          <a href="#about">About</a>
         </li>
         <li>
           <a href="#services">Services</a>
         </li>
         <li>
-          <a href="#about">About</a>
+          <a href="#blog">Blog</a>
         </li>
         <li>
           <a href="#contact">Contact</a>
@@ -76,13 +76,13 @@ const NavBar = () => {
             <a href="#home">Home</a>
           </li>
           <li onClick={() => setHamBurger(!hamBurger)}>
-            <a href="#blog">Blog</a>
+            <a href="#about">About</a>
           </li>
           <li onClick={() => setHamBurger(!hamBurger)}>
             <a href="#services">Services</a>
           </li>
           <li onClick={() => setHamBurger(!hamBurger)}>
-            <a href="#about">About</a>
+            <a href="#blog">Blog</a>
           </li>
           <li onClick={() => setHamBurger(!hamBurger)}>
             <a href="#contact">Contact</a>
@@ -125,8 +125,8 @@ const NavContainer = styled.nav`
   height: 105px;
   box-shadow: ${(props) =>
     props.mode === "dark"
-      ? "0px 4px 10px 0px rgba(16, 95, 216, 0.20)"
-      : "0px 4px 10px 0px #dedcff"} !important;
+      ? "0px 1px 5px 0px rgba(16, 95, 216, 0.20)"
+      : "0px 1px 5px 0px #dedcff"} !important;
   /* box-shadow: 0px 4px 67px 0px #dedcff; */
   background-color: ${(props) =>
     props.mode === "dark"

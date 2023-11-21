@@ -14,7 +14,6 @@ const Services = () => {
       <div className="services-heading">
         <div className="header-left">
           <header>Our Services</header>
-          {/* <p>"The greatest ideas are the simplest." - William Golding</p> */}
         </div>
         <div className="header-right"></div>
       </div>

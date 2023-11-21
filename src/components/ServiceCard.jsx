@@ -33,8 +33,9 @@ const ServiceCardContainer = styled.div`
     height: 100px;
   }
   .title {
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 500;
+    text-align: center;
     color: ${(props) =>
       props.mode === "dark"
         ? darkModeColors.accent

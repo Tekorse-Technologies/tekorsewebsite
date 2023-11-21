@@ -10,13 +10,13 @@ import "../styles/downArrow.css";
 const HeroSection = () => {
   const [{ dark_mode }] = useStateProvider();
 
-  const parallaxSpecular = useParallax({
-    speed: -10,
-    style: {
-      top: "10rem",
-    },
-    rotate: [-200, 0],
-  });
+  // const parallaxSpecular = useParallax({
+  //   speed: -10,
+  //   style: {
+  //     top: "10rem",
+  //   },
+  //   rotate: [-200, 0],
+  // });
   const parallaxText = useParallax({
     speed: 1,
     style: {
@@ -24,24 +24,24 @@ const HeroSection = () => {
     },
     scale: [0.5, 1.2],
   });
-  const parallaxStrip = useParallax({
-    speed: 1,
-    translateX: [0, 100],
-  });
+  // const parallaxStrip = useParallax({
+  //   speed: 1,
+  //   translateX: [0, 100],
+  // });
 
   return (
     <HeroContainer mode={dark_mode} id="home" className="">
       <div className="ellipse"></div>
-      <img
+      {/* <img
         src={specular}
         ref={parallaxSpecular.ref}
         className="specular"
         alt=""
-      />
-      <img className="strip" ref={parallaxStrip.ref} src={strip} alt="" />
+      /> */}
+      {/* <img className="strip" ref={parallaxStrip.ref} src={strip} alt="" /> */}
       <header ref={parallaxText.ref}>
-        Where Tech Imagination <br /> Meets Practical <br />{" "}
-        <span>Innovation</span>
+        Empowering Learners <br />
+        with Innovative <br /> <span>EdTech Solutions</span>
       </header>
       <img className="doodle-line" src={doodle} alt="img"></img>
       <div className="arrow-container">
@@ -81,7 +81,6 @@ const HeroContainer = styled.div`
     left: 0;
     width: 411px;
     height: 200px;
-    /* z-index: 5; */
     position: absolute;
     background: linear-gradient(
       118deg,

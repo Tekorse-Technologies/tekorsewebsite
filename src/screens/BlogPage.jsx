@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useStateProvider } from "../context/StateProvider";
 import { darkModeColors, lightModeColors } from "../styles/colors";
@@ -9,6 +9,10 @@ import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { blogData } from "../utils/blogListData";
 
 const BlogPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [{ dark_mode }] = useStateProvider();
   return (
     <BlogPageContainer mode={dark_mode}>
@@ -26,52 +30,81 @@ const BlogPage = () => {
           <div className="title">About</div>
           <div className="para">
             <p>
-              <span>Tekorse Technology :</span> where innovation is not a
-              destination but a way of life.It's the bridge between imagination
-              and implementation, where creativity meets code, and visions turn
-              into digital reality. Tekorse Technology is a leading-edge tech
-              company dedicated to transforming innovative ideas into powerful
-              digital solutions.It's the alchemist of innovation, turning ideas
-              into digital gold. Picture a dynamic blend of tech wizards,
-              creative minds, and data virtuosos, all under one roof, crafting
-              extraordinary digital experiences. Tekorse Technology stands out
-              not only for its technical proficiency but also for its commitment
-              to client satisfaction. By adopting the latest technologies,
-              adhering to ethical practices, and delivering exceptional customer
-              experiences, Tekorse Technology has earned a reputation as a
-              trusted partner for businesses aiming to achieve digital
-              excellence.
+              <span>
+                "Tekorse Technologies: Powering Businesses Through Innovation
+                and Training"
+              </span>
+              <br />
+              <br />
+              In the ever-changing digital landscape, Tekorse Technologies
+              stands as a beacon of transformation and growth. We excel in
+              custom software solutions, from tailored apps to AI innovation,
+              while also fortifying your digital fortress with state-of-the-art
+              cybersecurity. But we don't stop there; our corporate training
+              empowers your team to harness the full potential of technology. We
+              envision a world where knowledge and tech unite for unparalleled
+              success. Join us on this journey, and let Tekorse Technologies be
+              your trusted partner for software and training, ensuring your
+              business is ready for a thriving future.
             </p>
           </div>
         </div>
         <div className="content">
-          <div className="title">
-            Introduction to The Corporate World of Tekorse
-          </div>
+          <div className="title">Why Choose Tekorse Technologies?</div>
           <div className="para">
-            <div className="sub-title">
-              What defines the cutting-edge realm of corporate training today?
-            </div>
             <p>
-              Corporate trainings are specialized programs designed to enhance
-              the skills, knowledge, and abilities of employees within a
-              company. These training sessions can cover a wide range of topics,
-              including leadership development, technical skills, communication,
-              team building, and more.
+              In the fast-paced world of technology, choosing the right partner
+              for your digital journey is crucial. At Tekorse Technologies, we
+              understand the significance of this decision, and we're here to
+              show you why we are the perfect choice for your business.
             </p>
-          </div>
-          <div className="para">
-            <div className="sub-title">
-              Why are these corporate trainings essential in our evolving
-              generation?
-            </div>
             <p>
-              The goal of corporate trainings is to improve employee
-              performance, productivity, and overall job satisfaction. These
-              programs are often tailored to meet the specific needs of the
-              organization and its employees, ensuring that they are equipped
-              with the necessary tools to excel in their roles and contribute
-              effectively to the company's success.
+              <span>1 . Proven Excellence : </span>
+              With a track record of delivering outstanding results, Tekorse
+              Technologies has established itself as a leader in the tech
+              industry. Our team of experts is dedicated to providing innovative
+              solutions that drive success for businesses of all sizes.
+            </p>
+            <p>
+              <span>2 . Tailored Solutions : </span>
+              We recognize that every business is unique, with its own set of
+              challenges and opportunities. That's why we specialize in custom
+              software development, creating solutions that are tailored to your
+              specific needs. Whether you need custom applications,
+              user-friendly web and mobile apps, or AI-driven innovation, we
+              have the expertise to make it happen.
+            </p>
+            <p>
+              <span>3 . Cybersecurity Expertise : </span> In an age of
+              increasing cyber threats, security is paramount. Tekorse
+              Technologies employs cutting-edge measures to safeguard your
+              digital assets. With us, you can rest assured that your data and
+              operations remain secure.
+            </p>
+            <p>
+              <span>4 . Empowering Your Team : </span>
+              Technology is only as effective as the people who use it. We're
+              proud to offer comprehensive corporate training programs that keep
+              your team up-to-date with the latest advancements. Our aim is to
+              empower your workforce, ensuring they can make the most of the
+              digital tools at their disposal.
+            </p>
+            <p>
+              <span>5 . Vision for Success : </span>
+              Our vision is to create a world where technology and knowledge
+              unite to drive success and growth. We are committed to being the
+              catalyst for innovation in businesses of all sizes, fostering a
+              dynamic tech landscape where organizations can flourish through
+              continuous learning and technological excellence. <br /> <br />
+              Choosing Tekorse Technologies means choosing a partner dedicated
+              to your success. Join us on this transformative journey, and let
+              us help you navigate the ever-changing digital landscape.
+              Together, we'll position your business for a future filled with
+              innovation and growth. <br /> <br />
+              Ready to embark on your digital journey? Contact Tekorse
+              Technologies today and discover the difference that excellence,
+              tailored solutions, cybersecurity, and workforce empowerment can
+              make for your business.
             </p>
           </div>
         </div>
@@ -81,38 +114,35 @@ const BlogPage = () => {
           <div className="title">We Offer</div>
           <div className="para">
             <div className="sub-title">
-              <VscDebugBreakpointLog /> Application Development
+              <VscDebugBreakpointLog /> Online Learning Platforms
             </div>
             <div className="sub-title">
-              <VscDebugBreakpointLog /> Mobile Development
+              <VscDebugBreakpointLog /> Corporate Training and E-Learning
             </div>
             <div className="sub-title">
-              <VscDebugBreakpointLog /> Web Development
+              <VscDebugBreakpointLog /> Learning Management System
             </div>
             <div className="sub-title">
-              <VscDebugBreakpointLog /> Cloud Computing
+              <VscDebugBreakpointLog /> Virtual Classrooms
             </div>
             <div className="sub-title">
-              <VscDebugBreakpointLog /> Data Science
+              <VscDebugBreakpointLog /> Online Assessment and Testing
             </div>
             <div className="sub-title">
-              <VscDebugBreakpointLog /> Machine Learning
+              <VscDebugBreakpointLog /> Educational Content Creation
             </div>
             <div className="sub-title">
-              <VscDebugBreakpointLog /> Servers & Storages
+              <VscDebugBreakpointLog /> Language Learning Apps
             </div>
             <div className="sub-title">
               <VscDebugBreakpointLog />
-              Business Intelligence &Data Analytics
-            </div>
-            <div className="sub-title">
-              <VscDebugBreakpointLog /> IoT
+              EdTech Consultation and Integration
             </div>
           </div>
         </div>
         {/* we offer list end */}
 
-        {blogData.map(
+        {/* {blogData.map(
           ({ id, subTitle, spanTitle, spanContent, description }) => (
             <div className="content" key={id}>
               <div className="para">
@@ -126,7 +156,15 @@ const BlogPage = () => {
               </div>
             </div>
           )
-        )}
+        )} */}
+        {blogData.map(({ id, title, description }) => (
+          <div className="content" key={id}>
+            <div className="para">
+              <div className="title">{title}</div>
+              <p dangerouslySetInnerHTML={{ __html: description }}></p>
+            </div>
+          </div>
+        ))}
         <div className="content">
           <div className="title">Conclusion</div>
           <div className="para">

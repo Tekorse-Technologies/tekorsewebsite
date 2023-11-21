@@ -11,20 +11,26 @@ const AboutUs = () => {
   return (
     <AboutUsContainer mode={dark_mode} id="about">
       <header>
-        Who We Are <img src={illusSvg} alt="" />
+        Who We Are
+        {/* <img src={illusSvg} alt="" /> */}
       </header>
       <div className="main">
         <div className="text-container">
           <p>
-            Tekorse Technologies is a leading provider of custom software
-            development services.We help businesses of all sizes solve their
-            most challenging problems with innovative software solutions.{" "}
+            Tekorse Technologies is an Educational Technology (EdTech) company
+            that offers a wide range of services and products aimed at improving
+            and enhancing the educational experience. We leverage technology to
+            innovate and transform traditional learning methods.
           </p>
           <p>
-            Our Company specialized in human - centric digital experiences and
-            improve the products every single day. Together with a team of
-            professionals we come up with cool and important concepts , we will
-            help your business reach a new level.
+            We play an increasingly important role in the education landscape by
+            offering a variety of innovative services. We are helping to make
+            education more accessible, affordable, and effective for everyone
+          </p>
+          <p>
+            We also provide corporate training to help employees improve their
+            knowledge and skills so that they can be more productive and
+            successful in their jobs.{" "}
           </p>
         </div>
         <div className="img-container">

@@ -45,6 +45,7 @@ const WhyChooseUsContainer = styled.div`
     display: flex;
     flex-direction: column;
     .header {
+      padding-left: 5rem;
       header {
         color: ${(props) =>
           props.mode === "dark"
@@ -66,6 +67,7 @@ const WhyChooseUsContainer = styled.div`
   @media screen and (max-width: 1024px) {
     .container {
       .header {
+        padding-left: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
