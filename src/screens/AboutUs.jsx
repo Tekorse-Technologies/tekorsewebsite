@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import illusSvg from "../assets/illus.svg";
 import aboutUs from "../assets/about_us.png";
 import { darkModeColors, lightModeColors } from "../styles/colors";
 import { useStateProvider } from "../context/StateProvider";
@@ -10,10 +9,7 @@ const AboutUs = () => {
 
   return (
     <AboutUsContainer mode={dark_mode} id="about">
-      <header>
-        Who We Are
-        {/* <img src={illusSvg} alt="" /> */}
-      </header>
+      <header>Who We Are</header>
       <div className="main">
         <div className="text-container">
           <p>
