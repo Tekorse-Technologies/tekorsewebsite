@@ -2,21 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { useParallax } from "react-scroll-parallax";
 import doodle from "../assets/doodleLine.png";
-import specular from "../assets/specular.svg";
-import strip from "../assets/strip.svg";
+
 import { useStateProvider } from "../context/StateProvider";
 import { darkModeColors, lightModeColors } from "../styles/colors";
 import "../styles/downArrow.css";
 const HeroSection = () => {
   const [{ dark_mode }] = useStateProvider();
-
-  // const parallaxSpecular = useParallax({
-  //   speed: -10,
-  //   style: {
-  //     top: "10rem",
-  //   },
-  //   rotate: [-200, 0],
-  // });
   const parallaxText = useParallax({
     speed: 1,
     style: {
@@ -24,21 +15,9 @@ const HeroSection = () => {
     },
     scale: [0.5, 1.2],
   });
-  // const parallaxStrip = useParallax({
-  //   speed: 1,
-  //   translateX: [0, 100],
-  // });
-
   return (
     <HeroContainer mode={dark_mode} id="home" className="">
       <div className="ellipse"></div>
-      {/* <img
-        src={specular}
-        ref={parallaxSpecular.ref}
-        className="specular"
-        alt=""
-      /> */}
-      {/* <img className="strip" ref={parallaxStrip.ref} src={strip} alt="" /> */}
       <header ref={parallaxText.ref}>
         Empowering Learners <br />
         with Innovative <br /> <span>EdTech Solutions</span>
